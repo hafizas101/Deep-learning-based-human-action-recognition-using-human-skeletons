@@ -8,14 +8,14 @@ Berkeley MHAD dataset is available to download for free from the official web pa
 Preprocessing of the datset is done by Notebook file 'Main Extract.ipynb'. In this project, OpenPose COCO model is being used to extract keypoints from the video frames. The detailed explanation of using this model have been presented in this blog (https://www.learnopencv.com/multi-person-pose-estimation-in-opencv-using-openpose/). We do not even need to install OpenPose which is a very challenging task for beginner of Ubuntu. In the code, we are providing pretrained caffe model and network architecture of OpenPose to deep neural network module of OpenCV. Pretrained caffe model weights can be downloaded from https://drive.google.com/file/d/1qVU08ZOu0LR8TSjROhOzlugSKebkFfHr/view?usp=sharing and should be placed in the path /pose/coco/. In the 'Main Extract.ipynb' file we first capture frames of each video sequence, resize it, apply pose estimation function 'process_single_image' which returns composite images (keeypoints plotted on the original image), skleton images and keypoint locations. In this project, only skeleton images and keypoint locations have been used to train models.
 
 ## Pickel formation of skleton data
-The training and test skeleton data is pickled to use on Colab which is a free open source jupyter notebook environment by using the notebook file 'make_pickle.ipynb'. These pickles can be downloaded from .
+The training and test skeleton data is pickled to use on Colab which is a free open source jupyter notebook environment by using the notebook file 'make_pickle.ipynb'. These pickles can be downloaded from (https://drive.google.com/drive/folders/15-nWO5_VBadpzGyOfNyTyiZ62LRygcvt?usp=sharing).
 
 ## Training and Testing of the skeleton data
-#### LSTM modelling
+#### Long Short Term Memory
 LSTM model was choosen based on the idea that activity recognition is a temporal process and time sequence of frames is important. Various LSTM architestures were tried and hyper paramter tuning is done using Grid Optimization. The final best accuracy obtained by applying LSTM on skeleton images is 90.9 % for test case. The trained model weights 'rnn_6.h5' and architecture 'rnn_6.json' have been provided in models folder. <br/>
 Another investigation of LSTM model was done on keypoint locations in the notebook file 'keypoint_locations_training.ipynb'. But very low test accuracy of only 50% was obtained even after doing some hyperparameter tuning.
 
-#### Convolutional Neural Network Modelling
+#### Convolutional Neural Networks
 Famous AlexNet architecture was choosen as a CNN model to classify skeleton images. After doing some hyper parameter tuning, the final maximum efficieny obtained 90.58% by training with 'AlexNet_train.ipynb' notebook file. Trained model waights and architecture have been uploaded in '/trained_models/'directory. 
 
 #### Convolutional Autoencoder
