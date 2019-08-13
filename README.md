@@ -12,4 +12,11 @@ The training and test skeleton data is pickled to use on Colab which is a free o
 
 ## Training and Testing of the skeleton data
 #### LSTM modelling
-Various LSTM architestures were tried and hyper paramter tuning is done using Grid Optimization. The final best accuracy obtained by applying LSTM on skeleton images is 90.9 % for test case. The trained model weights 'rnn_6.h5' and architecture 'rnn_6.json' have been provided in models folder.
+LSTM model was choosen based on the idea that activity recognition is a temporal process and time sequence of frames is important. Various LSTM architestures were tried and hyper paramter tuning is done using Grid Optimization. The final best accuracy obtained by applying LSTM on skeleton images is 90.9 % for test case. The trained model weights 'rnn_6.h5' and architecture 'rnn_6.json' have been provided in models folder. <br/>
+Another investigation of LSTM model was done on keypoint locations in the notebook file 'keypoint_locations_training.ipynb'. But very low test accuracy of only 50% was obtained even after doing some hyperparameter tuning.
+
+#### Convolutional Neural Network Modelling
+Famous AlexNet architecture was choosen as a CNN model to classify skeleton images. After doing some hyper parameter tuning, the final maximum efficieny obtained 90.58% by training with 'AlexNet_train.ipynb' notebook file. Trained model waights and architecture have been uploaded in '/trained_models/'directory. 
+
+#### Convolutional Autoencoder
+Famous AlexNet architecture was choosen as a CNN model to classify skeleton images. After doing some hyper parameter tuning, the final maximum efficieny obtained 90.58% by training with 'AlexNet_train.ipynb' notebook file. Trained model waights and architecture have been uploaded in '/trained_models/'directory. 
