@@ -12,3 +12,4 @@ The training and test skeleton data is pickled to use on Colab which is a free o
 
 ## Training and Testing of the skeleton data
 #### LSTM modelling
+Various LSTM architestures were tried and hyper paramter tuning is done using Grid Optimization. The final best accuracy obtained by applying LSTM on skeleton images is 90.9 % for test case. The trained model weights 'rnn_6.h5' and architecture 'rnn_6.json' have been provided in models folder.
